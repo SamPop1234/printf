@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_start(a, format);
 
-	for (i = 0, format[i] != '\0', i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
@@ -30,8 +30,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%' && format[i + 1] == 's')
 		{
-			count = puttss(va_arg(a, *char));
-			i++
+			count = puttss(va_arg(a, char *));
+			i++;
 			byte += (count - 1);
 		}
 		else if (format[i] == '%' && format [i + 1] == '%')
@@ -41,6 +41,6 @@ int _printf(const char *format, ...)
 		byte += 1;
 	}
 	va_end(a);
-	return (byte)
+	return (byte);
 
 }
