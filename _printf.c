@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, byte = 0;
+	unsigned int i, count, byte = 0;
 
 	va_list a;
 
@@ -22,10 +22,21 @@ int _printf(const char *format, ...)
 		{
 			c_putch(format[i]);
 		}
-		if (format[i] ==  '%' && format[i + 1] == 'c')
+		else if (format[i] ==  '%' && format[i + 1] == 'c')
 		{
 			c_putch(va_arg(a, int));
+
 			i++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 's')
+		{
+			count = puttss(va_arg(a, *char));
+			i++
+			byte += (count - 1);
+		}
+		else if (format[i] == '%' && format [i + 1] == '%')
+		{
+			c_putch('%');
 		}
 		byte += 1;
 	}
