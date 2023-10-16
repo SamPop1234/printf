@@ -39,24 +39,6 @@ int _printf(const char *format, ...)
 		{
 			c_putch('%');
 		}
-		else if (format[i + 1] == 'd')
-		{
-            		int value = va_arg(a, int);
-
-            		printf("%d", value);
-            		i++;
-		}
-		else if (format[i + 1] == 'i')
-		{
-			int value = va_arg(a, int);
-			printf("%d", value);
-			i++;
-		}
-		else
-		{
-			c_putch(format[i]);
-			i++;
-		}
 		byte += 1
 	}
 	va_end(a);
