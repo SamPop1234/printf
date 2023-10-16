@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *
- *
- *
+ * puttss - function to print character
+ * @s:  character
+ * Return: printed chars
  */
 int puttss(char *s)
 {
