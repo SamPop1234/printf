@@ -23,23 +23,41 @@ int _printf(const char *format, ...)
 		{
 			c_putch(format[i]);
 		}
-		else if (format[i] ==  '%' && format[i + 1] == 'c')
-		{
+		else if (format[i + 1] == 'c')
+		
 			c_putch(va_arg(a, int));
 
 			i++;
 		}
-		else if (format[i] == '%' && format[i + 1] == 's')
+		else if (format[i + 1] == 's')
 		{
 			count = puttss(va_arg(a, char *));
 			i++;
 			byte += (count - 1);
 		}
-		else if (format[i] == '%' && format[i + 1] == '%')
+		else if (format[i + 1] == '%')
 		{
 			c_putch('%');
 		}
-		byte += 1;
+		else if (format[i + 1] == 'd')
+		{
+            		int value = va_arg(a, int);
+
+            		printf("%d", value);
+            		i++;
+		}
+		else if (format[i + 1] == 'i')
+		{
+			int value = va_arg(a, int);
+			printf("%d", value);
+			i++;
+		}
+		else
+		{
+			c_putch(format[i]);
+			i++;
+		}
+		byte += 1
 	}
 	va_end(a);
 	return (byte);
