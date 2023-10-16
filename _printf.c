@@ -10,6 +10,10 @@ int _printf(const char *format, ...)
 	unsigned int i, count, byte = 0;
 
 	va_list a;
+	
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		
+		return (-1);
 
 	va_start(a, format);
 
