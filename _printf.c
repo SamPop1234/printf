@@ -1,11 +1,8 @@
 #include "main.h"
 /**
- *
- *
- *
- *
- *
- *
+ * _printf - custom printf function
+ * @format : format
+ * Return: number of bytes
  */
 
 int _printf(const char *format, ...)
@@ -34,7 +31,7 @@ int _printf(const char *format, ...)
 			i++;
 			byte += (count - 1);
 		}
-		else if (format[i] == '%' && format [i + 1] == '%')
+		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			c_putch('%');
 		}

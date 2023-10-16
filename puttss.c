@@ -8,7 +8,7 @@ int puttss(char *s)
 {
 	int count = 0;
 
-	if(s)
+	if (s)
 	{
 
 		for (count = 0; s[count] != '\0'; count++)
@@ -16,5 +16,5 @@ int puttss(char *s)
 			c_putch(s[count]);
 		}
 	}
-	return (count);	
+	return (count);
 }
