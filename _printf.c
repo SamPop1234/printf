@@ -10,9 +10,9 @@ int _printf(const char *format, ...)
 	unsigned int i, count, byte = 0;
 
 	va_list a;
-	
+
 	if (!format || (format[0] == '%' && format[1] == '\0'))
-		
+
 		return (-1);
 
 	va_start(a, format);
@@ -24,9 +24,8 @@ int _printf(const char *format, ...)
 			c_putch(format[i]);
 		}
 		else if (format[i + 1] == 'c')
-		
+		{
 			c_putch(va_arg(a, int));
-
 			i++;
 		}
 		else if (format[i + 1] == 's')
@@ -39,7 +38,7 @@ int _printf(const char *format, ...)
 		{
 			c_putch('%');
 		}
-		byte += 1
+		byte += 1;
 	}
 	va_end(a);
 	return (byte);
