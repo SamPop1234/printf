@@ -8,7 +8,8 @@
 int _printf(const char *format, ...)
 {
 	match m[] = {
-		{"%c", printf_ch}, {"%s", print_str}, {"%%", print_37}
+		{"%c", printf_ch}, {"%s", print_str}, {"%%", print_37}, {"%d", print_deci},
+		{"%i", print_int}
 	};
 
 	va_list args;
@@ -25,7 +26,7 @@ int _printf(const char *format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-		k = 2;
+		k = 4;
 		while (k >= 0)
 		{
 			if (m[k].id[0] == format[i] && m[k].id[1] == format[i + 1])
