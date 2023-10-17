@@ -1,46 +1,45 @@
 #include "main.h"
 /**
- * _printf - custom printf function
- * @format: format
- * Return: number of bytes
+ *_printf - custom printf
+ *@format: arguments
+ *Return: number of bytes
  */
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, count, byte = 0;
+	match m[] = {
+		{"%c", printf_ch}, {"%s", print_str}, {"%%", print_37}
+	};
 
-	va_list a;
+	va_list args;
+	int i = 0, l = 0;
+	int k;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	va_start(args, format);
 
-		return (-1);
-
-	va_start(a, format);
-
-	for (i = 0; format[i] != '\0'; i++)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
-		if (format[i] != '%')
-		{
-			c_putch(format[i]);
-		}
-		else if (format[i + 1] == 'c')
-		{
-			c_putch(va_arg(a, int));
-			i++;
-		}
-		else if (format[i + 1] == 's')
-		{
-			count = puttss(va_arg(a, char *));
-			i++;
-			byte += (count - 1);
-		}
-		else if (format[i + 1] == '%')
-		{
-			c_putch('%');
-		}
-		byte += 1;
+		return (-1);
 	}
-	va_end(a);
-	return (byte);
-}
 
+Here:
+	while (format[i] != '\0')
+	{
+		k = 2;
+		while (k >= 0)
+		{
+			if (m[k].id[0] == format[i] && m[k].id[1] == format[i + 1])
+			{
+				l = l + m[k].f(args);
+				i = i + 2;
+				goto Here;
+			}
+			k--;
+		}
+		c_putch(format[i]);
+		i++;
+		l++;
+	}
+	va_end(args);
+	return (l);
+}

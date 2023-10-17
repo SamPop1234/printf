@@ -11,5 +11,5 @@ int printf_ch(va_list val)
 
 	str = va_arg(val, int);
 	c_putch(str);
-	return(1);
+	return (1);
 }

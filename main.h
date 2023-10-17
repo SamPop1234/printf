@@ -3,6 +3,23 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <unistd.h>
+#include <limits.h>
+
+/**
+ * struct format - custom structure
+ * @id: holds specifiers
+ * @f: holds aruments
+ */
+
+typedef struct format
+{
+	char *id;
+
+	int (*f)();
+} match;
+
+
 int _printf(const char *format, ...);
 int c_putch(char c);
 int puttss(char *s);

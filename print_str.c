@@ -15,15 +15,16 @@ int print_str(va_list val)
 	{
 		str = "(null)";
 		length = _strlen(str);
+
 		for (i = 0; i < length; i++)
 			c_putch(str[i]);
-		return(length);
+		return (length);
 	}
 	else
 	{
 		length = _strlen(str);
 		for (i = 0; i < length; i++)
 			c_putch(str[i]);
-		return (length;)
+		return (length);
 	}
 }
