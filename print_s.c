@@ -26,6 +26,6 @@ int _strlenc(const char *str)
 
 	for (i = 0; (str[i] != 0); i++)
 		;
-	
+
 	return (i);
 }
