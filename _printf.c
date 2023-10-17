@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _printf - custom printf function
- * @format : format
+ * @format: format
  * Return: number of bytes
  */
 
@@ -43,3 +43,4 @@ int _printf(const char *format, ...)
 	va_end(a);
 	return (byte);
 }
+
