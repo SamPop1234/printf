@@ -42,5 +42,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(a);
 	return (byte);
-
 }
