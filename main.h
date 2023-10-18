@@ -30,6 +30,7 @@ int _strlenc(const char *str);
 int print_37(void);
 int print_deci(va_list args);
 int print_int(va_list args);
+int print_b(va_list val);
 
 
 
