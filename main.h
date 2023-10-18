@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <unistd.h>
 #include <limits.h>
-
+#include <stdlib.h>
 /**
  * struct format - custom structure
  * @id: holds specifiers
@@ -31,6 +31,10 @@ int print_37(void);
 int print_deci(va_list args);
 int print_int(va_list args);
 int print_b(va_list val);
+int print_uint(va_list args);
+int print_oct(va_list val);
+int print_hex(va_list val);
+int print_heX(va_list val);
 
 
 
