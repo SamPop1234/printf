@@ -85,6 +85,6 @@ int print_deci(va_list args)
 		}
 	}
 	c_putch(last + '0');
-	
+
 	return (i);
 }
