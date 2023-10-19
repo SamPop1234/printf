@@ -35,7 +35,11 @@ int print_uint(va_list args);
 int print_oct(va_list val);
 int print_hex(va_list val);
 int print_heX(va_list val);
-
+int print_heX_extra(unsigned int num);
+int print_S(va_list val);
+int print_hex_extra(unsigned long int num);
+int print_p(va_list val);
+int print_r(va_list val);
 
 
 
