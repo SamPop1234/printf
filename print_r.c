@@ -6,7 +6,7 @@
  */
 int print_r(va_list val)
 {
-	char *s = Va_arg(val, char *);
+	char *s = va_arg(val, char *);
 	int i;
 	int j = 0;
 

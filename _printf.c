@@ -10,7 +10,8 @@ int _printf(const char *format, ...)
 	match m[] = {
 		{"%c", printf_ch}, {"%s", print_str}, {"%%", print_37}, {"%d", print_deci},
 		{"%i", print_int}, {"%b", print_b}, {"%u", print_uint}, {"%o", print_oct},
-		{"%x", print_hex}, {"%X", print_heX}
+		{"%x", print_hex}, {"%X", print_heX}, {"%S", print_S}, {"%p", print_p},
+		{"%R", print_rot13}, {"%r", print_r}
 	};
 
 	va_list args;
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-		k = 9;
+		k = 13;
 		while (k >= 0)
 		{
 			if (m[k].id[0] == format[i] && m[k].id[1] == format[i + 1])

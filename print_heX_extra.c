@@ -19,7 +19,7 @@ int print_heX_extra(unsigned int num)
 	j++;
 	array = malloc(sizeof(int) * j);
 	if (array == NULL)
-		return (NULL);
+		return (-1);
 	for (i = 0; i < j; i++)
 	{
 		array[i] = tem % 16;

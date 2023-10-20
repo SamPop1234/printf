@@ -32,7 +32,7 @@ int print_S(va_list val)
 		else
 		{
 			c_putch(s[i]);
-			l++
+			l++;
 		}
 	}
 	return (l);

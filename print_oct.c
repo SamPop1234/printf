@@ -20,7 +20,7 @@ int print_oct(va_list val)
 	j++;
 	array = malloc(sizeof(int) * j);
 	if (array == NULL)
-		return (NULL);
+		return (-1);
 	for (i = 0; i < j; i++)
 	{
 		array[i] = tem % 8;

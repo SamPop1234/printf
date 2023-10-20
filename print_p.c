@@ -7,7 +7,7 @@
 
 int print_p(va_list val)
 {
-	void *p
+	void *p;
 	char *s = "(NULL)";
 	int i, b;
 	long int j;
